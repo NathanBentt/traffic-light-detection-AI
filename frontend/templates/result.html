@@ -1,0 +1,36 @@
+<!--
+  html file to display the result of the analysis. 
+  Gets result and filename from the backend.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Analysis Result</h1>
+    <div class="result-content">
+      {% if result %}
+        <div class="alert alert-success">
+          <strong>The image contains a traffic light!</strong>
+        </div>
+      {% else %}
+        <div class="alert alert-danger">
+          <strong>The image does not contain a traffic light.</strong>
+        </div>
+      {% endif %}
+      <img
+        src="{{ url_for('display_image', filename=filename) }}"
+        alt="Uploaded Image"
+      >
+      <br><br>
+      <a href="{{ url_for('upload_file') }}" class="btn-secondary">Analyze Another Image</a>
+    </div>
+  </div>
+</body>
+</html>

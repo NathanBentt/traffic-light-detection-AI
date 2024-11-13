@@ -1,0 +1,55 @@
+<!--
+  This HTML file contains a form to upload an image file.
+  The form includes a hidden file input and a custom button to trigger the file input.
+  When a file is selected, the file name is displayed below the button.
+  The form is submitted to the server for processing.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Image</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Traffic Light Detection</h1>
+    <form method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <!-- Hidden file input -->
+        <input
+          type="file"
+          id="file"
+          name="file"
+          accept="image/*"
+          required
+          onchange="updateFileName()"
+          style="display: none;"
+        >
+        <!-- Custom button -->
+        <button type="button" class="btn" onclick="document.getElementById('file').click();">
+          Choose File
+        </button>
+        <!-- Display selected file name -->
+        <p id="file-name"></p>
+      </div>
+      <button type="submit" class="btn">Upload and Analyze</button>
+    </form>
+  </div>
+
+  <!-- JavaScript to display selected file name -->
+  <script>
+    function updateFileName() {
+      const input = document.getElementById('file');
+      const fileNameDisplay = document.getElementById('file-name');
+      if (input.files.length > 0) {
+        fileNameDisplay.textContent = input.files[0].name;
+      } else {
+        fileNameDisplay.textContent = '';
+      }
+    }
+  </script>
+</body>
+</html>

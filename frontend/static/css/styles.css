@@ -1,0 +1,110 @@
+/*
+  Styles for the frontend application. 
+  Wanted to use a light pastel color scheme for a clean and modern look. 
+*/
+
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e6f7ff; /* Pastel light blue */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+form {
+  display: inline-block;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #ffb347; /* Pastel orange */
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #ffa500;
+}
+
+.alert {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+a.btn-secondary {
+  background-color: #ffb347; /* Pastel orange */
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+a.btn-secondary:hover {
+  background-color: #ffa500;
+}
+
+#file-name {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
