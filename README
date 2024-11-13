@@ -1,2 +1,0 @@
-# Traffic Light Detection Using AI
-This project uses PyTorch to train an AI model capable of detecting whether a given image contains a traffic light. It is trained on ~20,000 images from the LISA traffic light dataset.
