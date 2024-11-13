@@ -1,13 +1,2 @@
-
-README and scripts
-------------------
-
-The README and various scripts for inspection, preparation, and evaluation can be found in our git repository:
-https://github.com/mcordts/cityscapesScripts
-
-Contact
--------
-
-Marius Cordts, Mohamed Omran
-www.cityscapes-dataset.net
-mail@cityscapes-dataset.net
+# Traffic Light Detection Using AI
+This project uses PyTorch to train an AI model capable of detecting whether a given image contains a traffic light. It is trained on ~20,000 images from the LISA traffic light dataset.
