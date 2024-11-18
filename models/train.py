@@ -14,8 +14,8 @@ import os
 
 def main():
     # Paths to training and validation images
-    trainDir = 'C:/Users/jnb20/Desktop/Code/Datasets/processed/traffic_light_detection/training'
-    valDir = 'C:/Users/jnb20/Desktop/Code/Datasets/processed/traffic_light_detection/validation'
+    trainDir = r'C:\Users\...\training'
+    valDir = r'C:\Users\...\validation'
 
     batchSize = 64
     learningRate = 0.0001
@@ -35,7 +35,6 @@ def main():
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learningRate, weight_decay=0.001)
 
-    # Get the number of training images
     num_training_images = len(trainLoader.dataset)
 
     train_model(model, trainLoader, valLoader, criterion, optimizer, device, numEpochs, num_training_images)
@@ -73,7 +72,6 @@ def train_model(model, trainLoader, valLoader, criterion, optimizer, device, num
 
         evaluate_model(model, valLoader, criterion, device, mode='Validation')
 
-    # print number of training images at end of training
     print(f'Training completed. Number of training images: {num_training_images}')
 
 

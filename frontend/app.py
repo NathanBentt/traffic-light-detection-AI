@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'frontend/static/uploads'
 
 # Load the custom trained model
-MODEL_PATH = r"C:\Users\jnb20\Desktop\Code\School\AI Project\models\traffic_light_model.pth"
+MODEL_PATH = r"C:\Users\...\traffic_light_model.pth"
 
 
 def load_model():

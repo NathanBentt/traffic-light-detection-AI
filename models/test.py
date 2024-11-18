@@ -11,7 +11,7 @@ import os
 
 def main():
     # Path to test data
-    testDir = r'C:\Users\jnb20\Desktop\Code\Datasets\processed\traffic_light_detection\tests'
+    testDir = r'C:\Users\...\tests'
 
     batchSize = 64
     num_workers = 8
