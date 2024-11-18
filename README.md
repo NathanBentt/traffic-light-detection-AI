@@ -30,12 +30,3 @@ My model was over 99% accurate when tested on images from LISA. However, I expec
 - Run `train.py` and, optionally, `test.py` to train and test your model. It will replace the model located at models/traffic_light_model.pth<br/>
 
 Note that the Flask app will now use your trained model rather than mine. Also, I assume this program could be used to train any Binary Classification model, not just traffic lights.
-
-## Applications
-AI models like this one are the reason CAPTCHA tests have gotten more complicated and difficult in recent years. While my model and program cannot directly solve CAPTCHA tests, similar ideas could be applied to create a bot capable of solving CAPTCHAs. A test such as this one:
-![simple traffic light captcha](https://github.com/user-attachments/assets/1a656162-f0c0-4dda-871c-3174db88aa92)<br/>
-can be easily solved through machine learning. This has led to new types of CAPTCHA tests, such as text-based ones like this:<br/>
-![word captcha](https://github.com/user-attachments/assets/a23ec365-7183-4931-8028-d9f65612cb4b)<br/>
-and even some newer, 3D model ones like this:<br/>
-![3d captcha](https://github.com/user-attachments/assets/d0db52ca-4406-4595-a509-f6fbc172dc3e)<br/>
-CAPTCHA tests must continue to improve to ensure security against AI powered bots.
