@@ -12,21 +12,29 @@ This project uses [PyTorch](https://pytorch.org/) to train an AI model capable o
 - CSS
 
 ## Requirements
-`pip install flask torch torchvision pillow pandas`
+`pip install flask torch torchvision pillow pandas`<br/>
+
 - Flask, torch, torchvision, pillow used in Flask web application
 - torch and torchvision used in creating, training, and testing model
 - pandas used to process images from LISA
 
+You will also need CUDA if you wish to use your NVIDIA GPU in the training process. You can install CUDA with something like this:<br/>
+
+`pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118`
+
 ## Usage
 ### Using My Model
+- Adjust `MODEL_PATH` within `app.py` to point to `traffic_light_model.pth` on your machine.
 - Run `app.py` to launch the Flask web app
 - Upload and analyze an image - the model will predict if that image contains a traffic light.<br/>
 
 My model was over 99% accurate when tested on images from LISA. However, I expect this accuracy to be less when tested on images from other parts of the world, as LISA is gathered from San Diego, California exclusively.
 
 ### Training Your Own Model
-- Organize data into traffic_light and no_traffic_light directories. (`LISA_organize_script.py` organizes the dayTrain and nightTrain images into traffic_light and no_traffic_light. Adjust appropriate directories if you use this script).
-- Adjust appropriate directories within `train.py`, `test.py` to point to appropriate directories on your machine.
-- Run `train.py` and, optionally, `test.py` to train and test your model. It will replace the model located at models/traffic_light_model.pth<br/>
+- Organize data into "traffic_light" and "no_traffic_light" directories. (`LISA_organize_script.py` organizes the "dayTrain" and "nightTrain" images from LISA into "traffic_light" and "no_traffic_light". Adjust `lisa_dataset_path` and `processed_dataset_path` if you use this script).
+- Adjust `trainDir` and `valDir` within `train.py` to point to your local directories.
+- Adjust `testDir` within `test.py` to point to your local directory.
+- Run `train.py` to train your model.
+- Optionally, run `test.py` to test your model based on the data located in `testDir`.
 
-Note that the Flask app will now use your trained model rather than mine. Also, I assume this program could be used to train any Binary Classification model, not just traffic lights.
+Note that the Flask app will now use your trained model rather than mine. Also, I assume this program could be used to train any Binary Classification model, not just traffic lights, when given the appropriate data.
