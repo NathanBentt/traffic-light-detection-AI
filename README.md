@@ -30,6 +30,9 @@ You will also need CUDA if you wish to use your NVIDIA GPU in the training proce
 
 My model was over 99% accurate when tested on images from LISA. However, I expect this accuracy to be less when tested on images from other parts of the world, as LISA is gathered from San Diego, California exclusively.
 
+![LISA only test results](https://github.com/user-attachments/assets/1079896d-19f2-4a7c-8907-e74b7756c33e)
+
+
 ### Training Your Own Model
 - Organize data into "traffic_light" and "no_traffic_light" directories. (`LISA_organize_script.py` organizes the "dayTrain" and "nightTrain" images from LISA into "traffic_light" and "no_traffic_light". Adjust `lisa_dataset_path` and `processed_dataset_path` if you use this script).
 - Adjust `trainDir` and `valDir` within `train.py` to point to your local directories.
