@@ -1,5 +1,5 @@
 # Traffic Light Detection AI
-This project uses [PyTorch](https://pytorch.org/) to train an AI model capable of determining whether a given image contains a traffic light. It is trained on ~20,000 images from [LISA Traffic Light Dataset](https://www.kaggle.com/datasets/mbornoe/lisa-traffic-light-dataset). I used [ResNet18](https://pytorch.org/vision/main/models/resnet.html) as a foundation, replacing and training the top layer for traffic light detection. You can use my trained model to test images for the presence of traffic lights, or you can make some changes and train a model based on your own images.
+This project uses [PyTorch](https://pytorch.org/) to train an AI model capable of determining whether a given image contains a traffic light. It is trained on ~16,000 images from [LISA Traffic Light Dataset](https://www.kaggle.com/datasets/mbornoe/lisa-traffic-light-dataset). I used [ResNet18](https://pytorch.org/vision/main/models/resnet.html) as a foundation, replacing and training the top layer for traffic light detection. You can use my trained model to test images for the presence of traffic lights, or you can make some changes and train a model based on your own images.
 
 ## Technologies Used
 - Python 3.12
