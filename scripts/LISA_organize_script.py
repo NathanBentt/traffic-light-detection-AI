@@ -8,10 +8,9 @@ import shutil
 import pandas as pd
 import random
 
-# Paths to datasets
-lisa_dataset_path = r'C:\\Users\\jnb20\\Desktop\\Code\\Datasets\\LISA_traffic_lights'
+lisa_dataset_path = r'C:\\...\\LISA_traffic_lights'
 annotations_path = os.path.join(lisa_dataset_path, 'Annotations', 'Annotations')
-processed_dataset_path = r'C:\\Users\\jnb20\\Desktop\\Code\\Datasets\\processed\\traffic_light_detection'
+processed_dataset_path = r'C:\\...\\traffic_light_detection'
 
 os.makedirs(processed_dataset_path, exist_ok=True)
 
@@ -48,7 +47,7 @@ def process_images_in_directory(images_path, annotations_path, dataset_name='', 
 
     annotations['Filename'] = annotations['Filename'].apply(lambda x: os.path.basename(x).lower())
 
-    # Collect all images and normalize filenames
+    # normalize filenames
     images_in_dir = [os.path.join(images_path, f) for f in os.listdir(images_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
     images_in_dir_filenames = [os.path.basename(img).lower() for img in images_in_dir]
     images_in_dir_path_map = {os.path.basename(img).lower(): img for img in images_in_dir}
@@ -56,7 +55,6 @@ def process_images_in_directory(images_path, annotations_path, dataset_name='', 
     # Create a set of images with traffic lights from annotations
     images_with_tl_set = set(annotations['Filename'])
 
-    # Identify images with and without traffic lights
     images_with_tl = [images_in_dir_path_map[img_name] for img_name in images_in_dir_filenames if img_name in images_with_tl_set]
     images_without_tl = [images_in_dir_path_map[img_name] for img_name in images_in_dir_filenames if img_name not in images_with_tl_set]
 
@@ -105,7 +103,7 @@ def process_dataset(dataset_name):
 images_with_tl_all = []
 images_without_tl_all = []
 
-# Datasets to process (include all desired datasets)
+# Datasets to process (include all your desired datasets)
 datasets = ['dayTrain', 'nightTrain']
 
 for dataset_name in datasets:
@@ -113,7 +111,6 @@ for dataset_name in datasets:
     images_with_tl_all.extend(with_tl)
     images_without_tl_all.extend(without_tl)
 
-# After collecting all images
 print(f"Total images with traffic lights: {len(images_with_tl_all)}")
 print(f"Total images without traffic lights: {len(images_without_tl_all)}")
 
@@ -125,7 +122,7 @@ train_ratio = 0.8
 val_ratio = 0.1
 test_ratio = 0.1
 
-# Helper function to split data
+# Helper function
 def split_data(data_list):
     total = len(data_list)
     train_end = int(total * train_ratio)
